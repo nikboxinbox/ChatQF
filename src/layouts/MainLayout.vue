@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> ChatQF </q-toolbar-title>
+        <q-toolbar-title> {{ title }} </q-toolbar-title>
 
         <div>💬</div>
       </q-toolbar>
@@ -90,6 +90,15 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
     };
+  },
+  data: () => { },
+  computed: {
+    title() {
+      if (this.$route.fullPath == "/auth") {
+        return "Login";
+      }
+      return "ChatQF";
+    },
   },
 });
 </script>
