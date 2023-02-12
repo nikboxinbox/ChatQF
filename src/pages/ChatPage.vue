@@ -14,10 +14,11 @@ q-page(class="flex column")
     //-   )
 
 
-    //- TODO: не срабатывает сабмит по нажатию кнопки
   q-footer(elevated)
     q-toolbar
-      q-form(@submit="sendMessage").full-width
+      q-form(
+        @submit="sendMessage"
+        ).full-width.flex
         q-input(
           outlined
           label="Let's whrite ASS !"
@@ -25,16 +26,19 @@ q-page(class="flex column")
           rounded
           dense
           v-model="newMessage"
-          )
-          template(v-slot:after)
-            q-btn(
-              label="Submit"
-              type="submit"
-              color="white"
-              round
-              dense
-              flat
-              icon="send")
+          ).send-message__input
+          //-  template(v-slot:after)
+        .btn__wrapp.flex
+          q-btn(
+            type="submit"
+            color="white"
+            round
+            dense
+            flat
+            icon="send")
+
+
+
 </template>
 
 <script lang="ts">
@@ -52,7 +56,6 @@ export default defineComponent({
   }),
   methods: {
     sendMessage() {
-      debugger;
       this.messages.push({
         text: this.newMessage,
         from: "me",
@@ -61,3 +64,9 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss">
+.send-message__input {
+  max-width: 80%;
+  width: inherit;
+}
+</style>

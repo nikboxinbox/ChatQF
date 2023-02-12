@@ -6,7 +6,7 @@
 
         <q-toolbar-title> {{ title }} </q-toolbar-title>
 
-        <div>💬</div>
+        <q-btn to="/auth" class="absolute-right q-pr-sm" no-caps flat dense icon="account_circle" label="Login" />
       </q-toolbar>
     </q-header>
 
