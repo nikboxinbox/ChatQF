@@ -55,6 +55,8 @@ export default defineComponent({
     ],
   }),
   methods: {
+    FSLKDJFASKFL
+    SDJFSJSJFF
     sendMessage() {
       this.messages.push({
         text: this.newMessage,
